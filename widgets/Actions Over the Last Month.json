@@ -1,0 +1,27 @@
+{
+    "title": "Actions Over the Last Month",
+    "type": "query_value",
+    "requests": [
+        {
+            "response_format": "scalar",
+            "queries": [
+                {
+                    "name": "query1",
+                    "data_source": "metrics",
+                    "query": "sum:io.temporal.server.action.count{$server-name}.as_count()",
+                    "aggregator": "sum"
+                }
+            ],
+            "formulas": [
+                {
+                    "formula": "query1"
+                }
+            ]
+        }
+    ],
+    "autoscale": true,
+    "precision": 2,
+    "timeseries_background": {
+        "type": "bars"
+    }
+}

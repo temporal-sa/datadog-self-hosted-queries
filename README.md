@@ -1,9 +1,10 @@
 # datadog-self-hosted-queries
-This repository has widgets 
 
 Sample templated widgets used to retrieve actions from a self-hosted cluster. It uses {$server-name} to avoid hard coding the name of the cluster.
 
 The widgets that are included are:
+
+[Actions Over the Last Month](widgets/Actions%20Over%20the%20Last%20Month.json) - note this includes the system namespace as well
 
 [Actions Over the Last Month per day - bar](widgets/Actions%20Over%20the%20Last%20Month%20per%20day%20-%20bar.json)
 
