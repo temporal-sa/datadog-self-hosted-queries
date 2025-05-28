@@ -1,0 +1,29 @@
+{
+    "title": "Actions Over the Last Month / day",
+    "type": "timeseries",
+    "requests": [
+        {
+            "formulas": [
+                {
+                    "number_format": {},
+                    "formula": "query1"
+                }
+            ],
+            "queries": [
+                {
+                    "name": "query1",
+                    "data_source": "metrics",
+                    "query": "sum:io.temporal.server.action.count{$server-name} by {namespace}.as_count().rollup(sum, daily, 'America/New_York')"
+                }
+            ],
+            "response_format": "timeseries",
+            "style": {
+                "palette": "dog_classic",
+                "order_by": "values",
+                "line_type": "solid",
+                "line_width": "normal"
+            },
+            "display_type": "bars"
+        }
+    ]
+}

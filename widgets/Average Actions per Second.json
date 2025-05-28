@@ -1,0 +1,24 @@
+{
+    "title": "Average Actions per Second",
+    "type": "query_value",
+    "requests": [
+        {
+            "formulas": [
+                {
+                    "formula": "query1"
+                }
+            ],
+            "queries": [
+                {
+                    "name": "query1",
+                    "data_source": "metrics",
+                    "query": "sum:io.temporal.server.action.count{$server-name}.as_rate()",
+                    "aggregator": "avg"
+                }
+            ],
+            "response_format": "scalar"
+        }
+    ],
+    "autoscale": true,
+    "precision": 2
+}

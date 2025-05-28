@@ -1,0 +1,28 @@
+{
+    "title": "Actions Per Day over Time",
+    "type": "timeseries",
+    "requests": [
+        {
+            "formulas": [
+                {
+                    "formula": "query1"
+                }
+            ],
+            "queries": [
+                {
+                    "name": "query1",
+                    "data_source": "metrics",
+                    "query": "sum:io.temporal.server.action.count{$server-name}.as_rate().rollup(sum, 86400)"
+                }
+            ],
+            "response_format": "timeseries",
+            "style": {
+                "palette": "dog_classic",
+                "order_by": "values",
+                "line_type": "solid",
+                "line_width": "normal"
+            },
+            "display_type": "line"
+        }
+    ]
+}
